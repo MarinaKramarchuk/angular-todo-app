@@ -1,0 +1,9 @@
+<div class="notification is-danger is-light has-text-weight-normal" [class.hidden]="!message()">
+  <div class="message-header">
+    <p>{{ title }}</p>
+    <button type="button" class="delete"></button>
+  </div>
+  <div class="message-body">
+    {{ message() }}
+  </div>
+</div>

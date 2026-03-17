@@ -1,0 +1,10 @@
+<form (submit)="addTodo(); $event.preventDefault()">
+        <input
+        #todoInput
+          type="text"
+          class="todoapp__new-todo"
+          placeholder="What needs to be done?"
+          [value]="newTitle()"
+          (input)="newTitle.set(todoInput.value)"
+        />
+</form>

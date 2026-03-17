@@ -1,0 +1,37 @@
+<div class="todo" [class.completed]="todo().completed">
+  <label class="todo__status-label">
+    <input
+      type="checkbox"
+      class="todo__status"
+      [checked]="todo().completed"
+      (change)="onToggle()"
+    />
+  </label>
+
+  @if (editing()) {
+    <form (submit)="$event.preventDefault()">
+      <input
+        #titleInput
+        type="text"
+        class="todo__title-field"
+        placeholder="Empty todo will be deleted"
+        [value]="todo().title"
+        (keyup.escape)="editing.set(false)"
+        (keyup.enter)="onSave(titleInput.value)"
+        (blur)="onSave(titleInput.value)"
+      />
+    </form>
+  } @else {
+    <ng-container>
+      <span class="todo__title" (dblclick)="editing.set(true)">
+        {{ todo().title }}
+      </span>
+      <button type="button" class="todo__remove" (click)="onDelete()">×</button>
+    </ng-container>
+  }
+
+  <div class="modal overlay" [class.is-active]="false">
+    <div class="modal-background has-background-white-ter"></div>
+    <div class="loader"></div>
+  </div>
+</div>
