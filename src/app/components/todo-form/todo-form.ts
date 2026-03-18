@@ -6,7 +6,7 @@ import { Component, output, signal } from '@angular/core';
   templateUrl: './todo-form.html',
   styleUrl: './todo-form.scss',
 })
-export class TodoForm {
+export class TodoFormComponent {
   newTitle = signal('');
   add = output<string>();
 

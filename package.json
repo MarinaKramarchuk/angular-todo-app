@@ -1,6 +1,6 @@
 {
   "name": "angular-todo-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +21,8 @@
     "@fortawesome/fontawesome-free": "^7.2.0",
     "bulma": "^1.0.4",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zone.js": "^0.16.1"
   },
   "devDependencies": {
     "@angular/build": "^21.2.2",

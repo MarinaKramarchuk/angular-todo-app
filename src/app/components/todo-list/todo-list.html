@@ -1,0 +1,57 @@
+<div class="todoapp">
+  <h1 class="todoapp__title">todos</h1>
+
+  <div class="todoapp__content">
+    <header class="todoapp__header">
+      @if (todos().length > 0) {
+        <button type="button" class="todoapp__toggle-all active" (click)="toggleAll()"></button>
+      }
+      <app-todo-form (add)="addTodo($event)" />
+    </header>
+
+    <section class="todoapp__main">
+      @if (isLoading()) {
+        <div class="has-text-centered section">
+          <p>Loading todos...</p>
+        </div>
+      } @else {
+        @for (todo of filteredTodos(); track todo.id) {
+          <app-todo
+            [todo]="todo"
+            (toggle)="toggleTodoCompletion($event)"
+            (delete)="deleteTodo($event)"
+            (update)="updateTodoTitle($event)"
+          />
+        }
+      }
+    </section>
+
+    @if (todos().length > 0) {
+      <footer class="todoapp__footer">
+        <span class="todo-count"> {{ activeCount() }} items left </span>
+
+        <nav class="filter">
+          <a class="filter__link" [class.selected]="filter() === 'all'" (click)="setFilter('all')"
+            >All</a
+          >
+          <a
+            class="filter__link"
+            [class.selected]="filter() === 'active'"
+            (click)="setFilter('active')"
+            >Active</a
+          >
+          <a
+            class="filter__link"
+            [class.selected]="filter() === 'completed'"
+            (click)="setFilter('completed')"
+            >Completed</a
+          >
+        </nav>
+
+        <button type="button" class="todoapp__clear-completed" (click)="clearCompleted()">
+          Clear completed
+        </button>
+      </footer>
+    }
+  </div>
+</div>
