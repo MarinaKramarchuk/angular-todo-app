@@ -1,0 +1,12 @@
+<nav class="filter">
+  <a class="filter__link" [class.selected]="currentFilter() === 'all'" (click)="setFilter('all')">All</a>
+  <a class="filter__link" [class.selected]="currentFilter() === 'active'" (click)="setFilter('active')"
+    >Active</a
+  >
+  <a
+    class="filter__link"
+    [class.selected]="currentFilter() === 'completed'"
+    (click)="setFilter('completed')"
+    >Completed</a
+  >
+</nav>

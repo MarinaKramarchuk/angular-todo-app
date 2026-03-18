@@ -5,11 +5,12 @@ import { TodoType } from '../../types/todo';
 import { MessageService } from '../../services/message';
 import { TodoComponent } from '../todo/todo';
 import { TodoFormComponent } from '../todo-form/todo-form';
+import { FilterComponent } from '../filter/filter';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.html',
-  imports: [TodoFormComponent, TodoComponent],
+  imports: [TodoFormComponent, TodoComponent, FilterComponent],
   styleUrl: './todo-list.scss',
 })
 export class TodoListComponent implements OnInit {

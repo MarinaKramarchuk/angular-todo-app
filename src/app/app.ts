@@ -7,7 +7,7 @@ import { ErrorMessageComponent } from "./components/error-message/error-message"
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TodoListComponent, RouterLink, RouterOutlet, ErrorMessageComponent],
+  imports: [RouterLink, RouterOutlet, ErrorMessageComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

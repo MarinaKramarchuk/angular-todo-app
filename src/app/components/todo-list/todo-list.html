@@ -30,23 +30,7 @@
       <footer class="todoapp__footer">
         <span class="todo-count"> {{ activeCount() }} items left </span>
 
-        <nav class="filter">
-          <a class="filter__link" [class.selected]="filter() === 'all'" (click)="setFilter('all')"
-            >All</a
-          >
-          <a
-            class="filter__link"
-            [class.selected]="filter() === 'active'"
-            (click)="setFilter('active')"
-            >Active</a
-          >
-          <a
-            class="filter__link"
-            [class.selected]="filter() === 'completed'"
-            (click)="setFilter('completed')"
-            >Completed</a
-          >
-        </nav>
+        <app-filter [currentFilter]="filter()" (filterChanged)="setFilter($event)"></app-filter>
 
         <button type="button" class="todoapp__clear-completed" (click)="clearCompleted()">
           Clear completed
